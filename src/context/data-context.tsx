@@ -56,6 +56,12 @@ const DataProvider = ({ children }: { children: React.ReactNode }) => {
       revName: name,
       pp: pp[Math.floor(Math.random() * pp.length)],
     };
+    // Update average rating
+    const newRating =
+      (newData[index].averageRating * newData[index].ratings.length + rating) /
+      (newData[index].ratings.length + 1);
+    newData[index].averageRating = +newRating.toFixed(1);
+
     // Push on 0th index to show latest review first
     newData[index].ratings.unshift(newReview);
     setData(newData);
