@@ -19,10 +19,19 @@ export const DataContext = createContext<IDataContext>({
     restaurantId: number;
     rating: number;
     review: string;
-    name: string;
   }) => {},
 });
 
+const names = [
+  "John Doe",
+  "Taylor Swift",
+  "Tom Cruise",
+  "Harry Potter",
+  "John Wick",
+  "Tony Stark",
+];
+const pic = pp[Math.floor(Math.random() * pp.length)];
+const name = names[Math.floor(Math.random() * names.length)];
 const DataProvider = ({ children }: { children: React.ReactNode }) => {
   const [data, setData] = useState<IDataContext["restaurants"] | []>([]);
   const [cuisines, setCuisines] = useState<Cuisine[]>([]);
@@ -40,12 +49,10 @@ const DataProvider = ({ children }: { children: React.ReactNode }) => {
     restaurantId,
     rating,
     review,
-    name,
   }: {
     restaurantId: number;
     rating: number;
     review: string;
-    name: string;
   }) => {
     const newData = [...data];
     const index = newData.findIndex((item: any) => item.id === restaurantId);
@@ -54,7 +61,7 @@ const DataProvider = ({ children }: { children: React.ReactNode }) => {
       rating,
       comment: review,
       revName: name,
-      pp: pp[Math.floor(Math.random() * pp.length)],
+      pp: pic,
     };
     // Update average rating
     const newRating =

@@ -18,7 +18,6 @@ const AddReview: React.FC<Props> = ({ setShowAddReview, id }) => {
       comment: string;
     };
     setReview({
-      name: data.name,
       rating: +data.rating,
       restaurantId: id,
       review: data.comment,
@@ -52,7 +51,7 @@ const AddReview: React.FC<Props> = ({ setShowAddReview, id }) => {
           </p>
         </div>
         <form className="flex flex-col gap-2" onSubmit={handleAddReview}>
-          <div className="flex flex-row gap-2 items-center w-full justify-between">
+          {/* <div className="flex flex-row gap-2 items-center w-full justify-between">
             <label
               className="text-md font-semibold min-w-[100px]"
               htmlFor="name"
@@ -65,7 +64,7 @@ const AddReview: React.FC<Props> = ({ setShowAddReview, id }) => {
               id="name"
               className="border border-gray-400 flex-1 rounded-md p-2"
             />
-          </div>
+          </div> */}
           <div className="flex flex-row gap-2 items-center  w-full justify-between">
             <label
               className="text-md font-semibold min-w-[100px]"
@@ -73,7 +72,10 @@ const AddReview: React.FC<Props> = ({ setShowAddReview, id }) => {
             >
               Rating
             </label>
-            <select className="w-full" name="rating">
+            <select
+              className="w-full border border-gray-400 flex-1 rounded-md p-2"
+              name="rating"
+            >
               <option value="0" hidden>
                 Select a rating
               </option>

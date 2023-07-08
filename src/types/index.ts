@@ -34,7 +34,7 @@ export interface IDataContext {
     setData: (data: Restaurant[]) => void;
     loading: boolean;
     setLoading: (loading: boolean) => void;
-    setReview: ({ restaurantId, rating, review, name }: { restaurantId: number, rating: number, review: string, name: string }) => void;
+    setReview: ({ restaurantId, rating, review, }: { restaurantId: number, rating: number, review: string, }) => void;
     selectedCuisine: number;
     setSelectedCuisine: (cuisineId: number) => void;
 }
