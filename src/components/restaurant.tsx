@@ -20,6 +20,7 @@ const Restaurant: React.FC<Props> = ({ restaurant }) => {
         {restaurant.menu.map((dish) => {
           return (
             <Dishes
+              key={dish.imgSrc}
               restaurantName={restaurant.name}
               dish={dish}
               restaurantId={restaurant.id}

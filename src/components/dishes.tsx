@@ -16,7 +16,7 @@ const Dishes: React.FC<Props> = ({ dish, restaurantId, restaurantName }) => {
       href={`/restaurant/${restaurantId}`}
       className="flex flex-col bg-slate-700 rounded-lg  w-80"
     >
-      <img
+      <Image
         src={dish.imgSrc}
         alt={dish.name}
         width={300}

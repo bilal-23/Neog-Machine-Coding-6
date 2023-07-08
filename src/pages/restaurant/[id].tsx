@@ -15,7 +15,7 @@ const RestaurantId = () => {
     const id = router.query.id as string;
     const restaurant = restaurants.find((r) => r.id === parseInt(id));
     setRestaurant(restaurant);
-  }, [restaurant]);
+  }, [restaurants, router.query.id]);
 
   return (
     <main
