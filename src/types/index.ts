@@ -15,6 +15,7 @@ export type Restaurant = {
         comment: string;
         revName: string;
         pp: string;
+        id: string
     }[];
     averageRating: number;
     description: string;

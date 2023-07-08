@@ -56,7 +56,7 @@ const RestaurantId = () => {
           <h2 className="text-2xl font-bold mt-10">Reviews</h2>
           <div className="flex flex-col gap-5 mt-5 w-full">
             {restaurant?.ratings?.reverse().map((rating) => {
-              return <Reviews key={rating.revName} review={rating} />;
+              return <Reviews key={rating.id} review={rating} />;
             })}
           </div>
         </div>

@@ -1,5 +1,6 @@
-import { cuisineData, pp, restaurantsData } from "@/data";
 import { Cuisine, IDataContext } from "@/types";
+import { v4 as uuidv4 } from "uuid";
+import { cuisineData, pp, restaurantsData } from "@/data";
 import { createContext, useContext, useEffect, useState } from "react";
 
 export const DataContext = createContext<IDataContext>({
@@ -59,6 +60,7 @@ const DataProvider = ({ children }: { children: React.ReactNode }) => {
     if (index === -1) return;
     const newReview = {
       rating,
+      id: uuidv4(),
       comment: review,
       revName: name,
       pp: pic,
@@ -68,7 +70,6 @@ const DataProvider = ({ children }: { children: React.ReactNode }) => {
       (newData[index].averageRating * newData[index].ratings.length + rating) /
       (newData[index].ratings.length + 1);
     newData[index].averageRating = +newRating.toFixed(1);
-
     // Push on 0th index to show latest review first
     newData[index].ratings.unshift(newReview);
     setData(newData);
